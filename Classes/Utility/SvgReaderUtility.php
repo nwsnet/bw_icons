@@ -12,7 +12,7 @@ class SvgReaderUtility
         $svgJson = json_encode($xmlInit);
         $svgArray = json_decode($svgJson, true);
 
-        $svgGlyphs = $svgArray['defs']['font']['glyph'];
+        $svgGlyphs = $svgArray['defs']['font']['glyph'] ?? [];
         $svgGlyphsClear = [];
 
         if (count($svgGlyphs) > 0) {
